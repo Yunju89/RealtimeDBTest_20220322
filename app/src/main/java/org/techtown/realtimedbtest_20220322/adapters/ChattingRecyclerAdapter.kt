@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import org.techtown.realtimedbtest_20220322.R
 import org.techtown.realtimedbtest_20220322.datas.ChattingData
@@ -15,8 +16,13 @@ class ChattingRecyclerAdapter(
 
     inner class MyViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
+        val txtContent = view.findViewById<TextView>(R.id.txtContent)
+        val txtCreatedAt = view.findViewById<TextView>(R.id.txtCreatedAt)
+
         fun bind(data: ChattingData) {      // 실제 값을 붙여주는 함수, 이너클래스 기능만 담당. 실제 사용은 바인드뷰홀더에서
 
+            txtContent.text = data.content
+            txtCreatedAt.text = data.createdAt
 
         }
     }
