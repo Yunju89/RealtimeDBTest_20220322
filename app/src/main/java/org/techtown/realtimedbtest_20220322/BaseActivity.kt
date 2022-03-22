@@ -17,8 +17,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
         mContext = this
 
-        setupEvents()
-        setValues()
 
     }
 
